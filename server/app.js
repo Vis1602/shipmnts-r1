@@ -3,7 +3,7 @@ const cors = require('cors');
 
 // Import routes
 const storeRoutes = require('./routes/storeRoutes');
-
+const planRoutes = require('./routes/planRoutes')
 const app = express();
 
 // Middleware
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 // API routes
 app.use('/store', storeRoutes);
-
+app.use('/plan', planRoutes);
 // 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({
