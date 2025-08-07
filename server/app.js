@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 // Import routes
-const sampleRoutes = require('./routes/sampleRoutes');
+const storeRoutes = require('./routes/storeRoutes');
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // API routes
-app.use('/api/samples', sampleRoutes);
+app.use('/store', storeRoutes);
 
 // 404 handler
 app.use('*', (req, res) => {

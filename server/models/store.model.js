@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
 const sampleSchema = new mongoose.Schema({
   name: {
@@ -27,3 +27,27 @@ sampleSchema.pre('save', function(next) {
 });
 
 module.exports = mongoose.model('Sample', sampleSchema);
+*/
+
+const mongoose = require ('mongoose')
+const storeSchema = new mongoose.Schema ({
+  store_location:{
+    type:String,
+    required:true,
+    unique:true,
+    lowercase:true,
+    trim:true
+  },
+  currency:{
+    type:String,
+    required:true,
+    uppercase:true,
+    trim:true
+  },
+  tax_percentage:{
+    type:Number,
+    required:true
+  },
+  premium_items:[String]
+}, {timestamps:true});
+module.exports = mongoose.model('Store', storeSchema);
